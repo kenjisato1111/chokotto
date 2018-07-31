@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+d="$(cat -)"
+l=${1:-3}
+echo "$d" | head -n $l
+echo "︙"
+echo "$d" | tail -n $l
