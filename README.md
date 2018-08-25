@@ -41,3 +41,40 @@ $ (function cr(){ $1|(d=$(cat);l=${2:-3};echo "$d"|head -n $l;echo "︙";echo "$
 1999
 2000
 ```
+## bash_scripts/fizzbuzz
+print fizzbuzz
+### usage
+```
+$ ./bash_scripts/fizzbuzz | ./bash_scripts/chuuryaku 15
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+︙
+86
+Fizz
+88
+89
+FizzBuzz
+91
+92
+Fizz
+94
+Buzz
+Fizz
+97
+98
+Fizz
+Buzz
+```
