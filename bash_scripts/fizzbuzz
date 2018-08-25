@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+for i in {1..100};
+do s='';
+   if [ $(($i%3)) = 0 ];then
+       s=$s'Fizz';
+   fi;
+   if [ $(($i%5)) = 0 ];then
+       s=$s'Buzz';
+   fi;
+   if [ -z $s ];then
+       s=$i;
+   fi;
+   echo $s;
+done
