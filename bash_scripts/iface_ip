@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+IFACE=$1
+IP=`ip a show ${IFACE} | grep -Po 'inet \K[\d.]+'`
+echo ${IP}
