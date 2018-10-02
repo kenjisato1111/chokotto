@@ -78,3 +78,11 @@ Fizz
 Fizz
 Buzz
 ```
+
+## bash_scripts/iface_ip
+print ip address of specified network interface
+### example
+The example below shows how to get the ip address of **wlan0**, 
+```
+$ ./bash_scripts/iface_ip wlan0
+```
