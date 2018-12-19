@@ -1,0 +1,1 @@
+echo "f=\${1:-f};s=\${2:-s};echo 'f:'\$f 's:'\$s;">a;echo "source a;source a '';">b;echo "\$ cat a";cat a;echo "\$ cat b";cat b;echo "\$ bash ./b";bash ./b;echo "\$ bash ./b a b";bash ./b a b;echo "\$ bash ./b '' b";bash ./b '' b;echo "\$ bash ./b a";bash ./b a;
