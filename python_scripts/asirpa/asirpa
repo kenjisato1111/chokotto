@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+import sys
+from unicodedata import name
+
+
+def print_name(input_string):
+    for c in input_string:
+        print(c + ' : ' + '\\U' + hex(ord(c)).lstrip('0x') + ' : ' + name(c))
+
+
+if __name__ == '__main__':
+    input_string = u'アシㇼパさん'
+    if len(sys.argv) > 1:
+        input_string = str(sys.argv[1])
+    print_name(input_string)
