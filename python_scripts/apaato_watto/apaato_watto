@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+
+import sys
+from unicodedata import name, normalize
+
+
+def apaato_watto(apaato=u'㌀', watto=u'㍗'):
+    error_count = 0
+    if ord(apaato) < ord(watto):
+        start = ord(apaato)
+        end = ord(watto)
+    else:
+        start = ord(watto)
+        end = ord(apaato)
+
+    charactor_list = range(start, end + 1)
+    print('charactor list : ' + str(charactor_list))
+    if len(charactor_list) > 300:
+        print('too many charactors are listed')
+        return
+
+    for i in range(start, end + 1):
+        try:
+            print(chr(i), ':',
+                  hex(i), ':',
+                  name(chr(i)), ':',
+                  normalize('NFKC', chr(i)))
+        except:
+            error_count += 1
+
+    print("error count : " + str(error_count))
+
+
+if __name__ == '__main__':
+    if len(sys.argv) > 2:
+        apaato_watto(apaato=sys.argv[1], watto=sys.argv[2])
+    else:
+        apaato_watto()
