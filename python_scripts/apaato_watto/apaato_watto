@@ -4,7 +4,7 @@ import sys
 from unicodedata import name, normalize
 
 
-def apaato_watto(apaato=u'㌀', watto=u'㍗'):
+def apaato_watto(apaato=u'㌀', watto=u'㍗', n=0):
     error_count = 0
     if ord(apaato) < ord(watto):
         start = ord(apaato)
@@ -13,13 +13,13 @@ def apaato_watto(apaato=u'㌀', watto=u'㍗'):
         start = ord(watto)
         end = ord(apaato)
 
-    charactor_list = range(start, end + 1)
+    charactor_list = range(start - n, end + 1 + n)
     print('charactor list : ' + str(charactor_list))
     if len(charactor_list) > 300:
         print('too many charactors are listed')
         return
 
-    for i in range(start, end + 1):
+    for i in charactor_list:
         try:
             print(chr(i), ':',
                   hex(i), ':',
@@ -32,7 +32,11 @@ def apaato_watto(apaato=u'㌀', watto=u'㍗'):
 
 
 if __name__ == '__main__':
+
     if len(sys.argv) > 2:
-        apaato_watto(apaato=sys.argv[1], watto=sys.argv[2])
+        n = 0
+        if len(sys.argv) > 3:
+            n = int(sys.argv[3])
+        apaato_watto(apaato=str(sys.argv[1]), watto=str(sys.argv[2]), n=n)
     else:
         apaato_watto()
